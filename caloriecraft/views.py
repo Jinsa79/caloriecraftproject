@@ -14,3 +14,7 @@ class IndexView(TemplateView):
     '''
     # index.htmlをレンダリングする
     template_name = 'index.html'
+    #object_listキーの別名を設定
+    context_object_name = 'orderby_records'
+    #モデルBlogPostのオブジェクトにorder_by()を適用して
+    #BlogPostのレコードを投稿日時の降順で並べ替える
