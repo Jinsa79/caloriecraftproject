@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #caloriecraftを追加する
     'caloriecraft.apps.CaloriecraftConfig',
+    'accounts.apps.AccountsConfig'
 ]
 
 MIDDLEWARE = [
@@ -77,8 +78,13 @@ WSGI_APPLICATION = 'caloriecraftproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'caloriecraft',
+        'USER': 'root',
+        'PASSWORD': 'Boc197905',
+        'HOST': 'localhost',
+        'POST': '3306',
+        
     }
 }
 
@@ -123,3 +129,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
