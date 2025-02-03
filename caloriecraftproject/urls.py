@@ -23,4 +23,5 @@ urlpatterns = [
     #http(s)://ホスト名/へのアクセスはcaloriecraftの
     #URLconf(urls.py)を呼び出す
     path('', include('caloriecraft.urls')),
+    
 ]

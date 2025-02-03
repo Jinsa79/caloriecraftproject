@@ -1,13 +1,11 @@
 from django.db import models
 
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import AbstractUser
 
-from .models import CustomUser
+#from .models import CustomUser
 
 # Create your models here.
 
-class CustomUserCreationForm(UserCreationForm):
-
-    class Meta:
-        model = CustomUser
-        fields = ('username', 'email', 'password1','password2')
+class CustomUser(AbstractUser):
+    # 追加のフィールドを定義（例）
+    age = models.IntegerField(null=True, blank=True)

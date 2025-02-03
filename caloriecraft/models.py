@@ -1,10 +1,32 @@
 from django.db import models
 
-# Create your models here.
+class Recipe(models.Model):
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    author = models.CharField(max_length=100)
+    posted_at = models.DateTimeField(auto_now_add=True)
+    category = models.CharField(max_length=100, blank=True, null=True)
+    image = models.ImageField(upload_to='recipe_images/', blank=True, null=True)
+    calories = models.FloatField(blank=True, null=True)
+    protein = models.FloatField(blank=True, null=True)
+    fat = models.FloatField(blank=True, null=True)
+    carbs = models.FloatField(blank=True, null=True)
+    ingredients = models.TextField(blank=True, null=True)  # カンマ区切りで食材を保存
+ 
+    def __str__(self):
+        return self.title
+
+        
+
 class CalorieCraftPost(models.Model):
-
-    pass
-
+    
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+    image = models.ImageField(upload_to='post_images/', blank=True, null=True)
+ 
+    def __str__(self):
+        return self.title
+'''
 class User(models.Model):
     user_id = models.AutoField(verbose_name='ユーザID', primary_key=True)
     user_nickname = models.CharField(verbose_name='ユーザネーム', max_length=50, null=False, unique=True)
@@ -17,6 +39,8 @@ class User(models.Model):
     class Meta:
         db_table = '01_user'  # 明示的にテーブル名を指定
 
+
+
 class Recipe(models.Model):
     recipe_name = models.CharField(verbose_name='レシピ名', max_length=25, null=False)
     creator_name = models.ForeignKey('User', verbose_name='レシピ名', on_delete=models.CASCADE)
@@ -25,3 +49,4 @@ class Recipe(models.Model):
 
     class Meta:
         db_table = '03_recipes'  # 明示的にテーブル名を指定
+'''
