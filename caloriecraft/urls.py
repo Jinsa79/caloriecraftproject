@@ -20,3 +20,9 @@ urlpatterns = [
     #
 #    path('caloriecraft-detail/<int:pk>/', views.CalorieCraftDetail.as_view(), name='caloriecraft-detail'),
 ]
+
+urlpatterns += static(
+
+    settings.MEDIA_URL,
+    document_root=settings.MEDIA_ROOT
+)
