@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}Post{% endblock %}
+
+    {% block contents %}
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col offset-2">
+
+                <form method="POST"
+                    enctype="multipart/form-data">
+                {% csrf_token %}
+                <table>
+                    <tr>
+                        <th>タイトル</th>
+                        <td>{{ form.title }}</td>
+                    </tr>
+                    <tr>
+                        <th>手順</th>
+                        <td>{{ form.contents }}</td>
+                    </tr>
+                    <tr>
+                        <th>画像</th>
+                        <td>{{ form.image }}</td>
+                    </tr>
+                    <tr>
+                        <th>カロリー数</th>
+                        <td>{{ form.calories }}</td>
+                    </tr>
+                    <tr>
+                        <th>タンパク質</th>
+                        <td>{{ form.protein }}</td>
+                    </tr>
+                    <tr>
+                        <th>脂質</th>
+                        <td>{{ form.fat }}</td>
+                    </tr>
+                    <tr>
+                        <th>炭水化物</th>
+                        <td>{{ form.carbs }}</td>
+                    </tr>
+                    <tr>
+                        <th>材料</th>
+                        <td>{{ form.ingredients }}</td>
+                    </tr>
+                </table>
+                <hr>
+                <button type="submit">登録</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
