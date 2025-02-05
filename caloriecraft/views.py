@@ -50,13 +50,7 @@ def search(request):
         'results': results
     })
  
-<<<<<<< HEAD
 class IndexView(ListView):
     template_name = 'index.html'
     queryset = PhotoPost.objects.order_by('-posted_at')
     paginate_by = 9
-=======
-class PostSuccessView(TemplateView):
-
-    template_name = 'post_success.html'
->>>>>>> 5b3b715beff2855dbed9caa28d57928fa14d8448
