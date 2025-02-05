@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 from .models import Recipe
- 
+from .models import PhotoPost
 # 修正: きちんと IndexView を定義
 class IndexView(TemplateView):
     template_name = 'index.html'
@@ -25,4 +25,7 @@ def search(request):
         'results': results
     })
  
- 
+class IndexView(ListView):
+    template_name = 'index.html'
+    queryset = PhotoPost.objects.order_by('-posted_at')
+    paginate_by = 9
