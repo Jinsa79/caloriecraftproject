@@ -3,7 +3,7 @@ from accounts.models import CustomUser
 
 class Recipe(models.Model):
     title = models.CharField(max_length=200)
-    content = models.TextField()
+    content = models.TextField(max_length=255,null=True)
     author = models.CharField(max_length=100)
     posted_at = models.DateTimeField(auto_now_add=True)
     category = models.CharField(max_length=100, blank=True, null=True)
@@ -22,11 +22,26 @@ class Recipe(models.Model):
 class CalorieCraftPost(models.Model):
     
     title = models.CharField(max_length=200)
-    content = models.TextField()
+    content = models.TextField(max_length=255,null=True)
     image = models.ImageField(upload_to='post_images/', blank=True, null=True)
  
     def __str__(self):
         return self.title
+    
+class Vegetables(models.Model):
+
+    name = models.CharField(max_length=30)
+    content = models.TextField(null=True)
+    auther = models.CharField(max_length=100)
+    posted_at = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField(upload_to='vegetable_images/', blank=True, null=True)
+    protain = models.FloatField(blank=True, null=True)
+    fat = models.FloatField(blank=True, null=True)
+    carbs = models.FloatField(blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
 '''
 class User(models.Model):
     user_id = models.AutoField(verbose_name='ユーザID', primary_key=True)

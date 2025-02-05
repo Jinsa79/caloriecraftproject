@@ -14,13 +14,19 @@ urlpatterns = [
     
     path('', views.IndexView.as_view(), name='index'),
     path('search/', views.search, name='search'),
+    path('post/', views.CreateRecipeView.as_view(), name='post'),
+    path('post_done/', views.PostSuccessView.as_view(), name='post_done'),
+
 
     #
     #
     #
 #    path('caloriecraft-detail/<int:pk>/', views.CalorieCraftDetail.as_view(), name='caloriecraft-detail'),
 ]
+
 urlpatterns += static(
+
     settings.MEDIA_URL,
     document_root=settings.MEDIA_ROOT
 )
+

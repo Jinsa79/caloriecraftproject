@@ -21,6 +21,8 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('caloriecraft.urls')),
+    path('', include('accounts.urls')),
 
     #http(s)://ホスト名/へのアクセスはcaloriecraftの
     #URLconf(urls.py)を呼び出す
