@@ -1,8 +1,16 @@
-from djando.contrib import admin
-from django.urls import path, include
+from django.urls import path, 
+from . import views
+
+app_name = 'acocounts'
 
 urlpatterns = [
-  path('admin/',admin.site.urls),
-  path('', include('caloriecraft.urls')),
-  path('', include('accounts.urls')),
+
+  path('signup/',
+      views.SignUpView.as_view(),
+       name='signup'),
+
+  path('signup_success/',
+      views.SignUpSuccessView.as_view(),
+      name='signup_success')
+  
 ]
