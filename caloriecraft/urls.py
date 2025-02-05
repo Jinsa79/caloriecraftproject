@@ -15,9 +15,6 @@ urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
     path('search/', views.search, name='search'),
 
-    path('admin/',admin.site.urls),
-    path('', include('caloriecraft.urls')),
-    path('', include('accounts.urls')),
 
     #
     #
