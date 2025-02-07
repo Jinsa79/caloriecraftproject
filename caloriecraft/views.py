@@ -1,7 +1,5 @@
 from django.shortcuts import render
-<<<<<<< HEAD
 from django.views.generic import TemplateView, ListView
-=======
 from django.views.generic import TemplateView
 from django.views.generic import CreateView
 from django.urls import reverse_lazy
@@ -9,7 +7,6 @@ from .forms import RecipePostForm
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 
->>>>>>> 5b3b715beff2855dbed9caa28d57928fa14d8448
 from .models import Recipe
 from .models import PhotoPost
 # 修正: きちんと IndexView を定義
@@ -50,13 +47,10 @@ def search(request):
         'results': results
     })
  
-<<<<<<< HEAD
 class IndexView(ListView):
     template_name = 'index.html'
     queryset = PhotoPost.objects.order_by('-posted_at')
     paginate_by = 9
-=======
 class PostSuccessView(TemplateView):
 
     template_name = 'post_success.html'
->>>>>>> 5b3b715beff2855dbed9caa28d57928fa14d8448

@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import CreateView, TemplateView
 from .forms import CustomUserCreationForm
 from django.urls import reverse_lazy
-from .forms import UserRegistrationForm
+# from .forms import UserRegistrationForm
 from django.contrib import messages
 
 class SignUpView(CreateView):
