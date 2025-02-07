@@ -16,7 +16,7 @@
                   <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='{% url recipe_detail record.pk %}'">View</button>
                   <button type="button" class="btn btnsm btn-outline-secondary" onclick="location.href='{% url recipe_cat category=record.category.id %}'">{{record.category.title}}</button>
                 </div>
-                <a href="{% url 'photo:user_list' user=record.user.id %}"><small class="text-muted">{{record.user.username}}</small></a>
+                <a href="#"><small class="text-muted">{{record.user.username}}</small></a>
                 
               </div>
             </div>

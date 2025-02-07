@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView
+from django.views.generic import TemplateView
 from django.views.generic import CreateView
 from django.urls import reverse_lazy
 from .forms import RecipePostForm
@@ -50,7 +51,6 @@ class IndexView(ListView):
     template_name = 'index.html'
     queryset = PhotoPost.objects.order_by('-posted_at')
     paginate_by = 9
-
 class PostSuccessView(TemplateView):
 
     template_name = 'post_success.html'
