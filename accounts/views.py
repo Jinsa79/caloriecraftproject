@@ -19,7 +19,7 @@ class SignUpView(CreateView):
 
     return super(). form_valid(form)
 
-class signUpSuccessView(TemplateView):
+class SignUpSuccessView(TemplateView):
  template_name = 'signup_success.html'
  
  
